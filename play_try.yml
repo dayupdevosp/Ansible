@@ -1,6 +1,6 @@
 ---
 
-- name: First Ansible Try
+- name: First Ansible Try(03 Testing the setup)
   hosts: cisco
   gather_facts: false
   connection: network_cli
