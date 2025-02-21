@@ -1,0 +1,17 @@
+---
+
+- name: First Ansible Try
+  hosts: cisco
+  gather_facts: false
+  connection: network_cli
+
+  task:
+    - name: "OSPF CONFIG"
+      cisoc.ios.ios_config:
+        line:
+          - router-id 99.99.99.99
+        parents:
+          - router ospf 99
+      register: ospf_out
+
+    - debug: var=ospf_out 

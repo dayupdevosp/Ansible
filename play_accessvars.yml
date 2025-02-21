@@ -1,0 +1,25 @@
+---
+
+- name: "print some var info"
+  hosts: uk
+  gather_facts: false
+
+  tasks:
+    - name: "access var staff"
+      debug:
+        msg: "{{ hostvars[ansible_host] }}"
+
+  tasks:
+    - name: "access var ntp"
+      debug:
+        msg: "{{ hostvars[ansible_host]['ntp'] }}"
+
+  tasks:
+    - name: "access var dot"
+      debug:
+        msg: "{{ hostvars[ansible_host].ntp }}"
+
+  tasks:
+    - name: "access var dot"
+      debug:
+        msg: "This OSPF rid is {{ hostvars[ansible_host].ospf.rid }}"

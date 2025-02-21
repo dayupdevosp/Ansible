@@ -1,0 +1,10 @@
+---
+
+- name: "print some var info"
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: "displaying var staff"
+      debug:
+        msg: "{{ hostvars[ansible_host] }}"

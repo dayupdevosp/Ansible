@@ -1,0 +1,20 @@
+---
+
+- name: loop pratice
+  hosts: usa
+  gather_facts: false
+  connection: network_cli
+
+  tasks:
+    - name: "Gather info"
+      cisco.ios.ios_facts:
+        gather_subset: all
+
+    - name: "Print return information from the previous task"
+      debug:
+        msg: "{{ ansible_facts['net_all_ipv4_addresses'] }}"
+  
+    - name: "Loop throught IP info"
+      debug:
+        msg: "{{ ansible_facts['net_hostname'] }} has an IP address {{ item }} configured"
+      loop: "{{ ansible_facts['net_all_ipv4_addresses'] }}" 

@@ -1,0 +1,23 @@
+---
+
+BGP:
+  ASN: "65001"
+  peers:
+    - neighbor: "10.0.0.2"
+      asn: "65002"
+    - neighbor: "10.0.0.13"
+      asn: "13"
+    - neighbor: "192.168.66.1"
+      asn: "661"
+
+eigrp_style: "named"
+
+eigrp:
+  asn: "1"
+
+ntp:
+  servers:
+    - 1.1.1.1
+    - 5.5.5.5
+    - 3.3.3.3
+    - 2.2.2.2 # new add handler test 

@@ -1,14 +1,15 @@
 ---
-- name: gathering facts
+
+- name: loop pratice
   hosts: usa
-  gathering: false
-  connection: ansible.netcommon.network_cli
+  gather_facts: false
+  connection: network_cli
 
   tasks:
     - name: "Gather info"
       cisco.ios.ios_facts:
         gather_subset: all
 
-    - name: "Print return infomation from the previours task"
+    - name: "Print return information from the previous task"
       debug:
         msg: "{{ ansible_facts }}"

@@ -1,0 +1,20 @@
+---
+
+- name: "BANNER"
+  hosts: usa
+  gather_facts: false
+  connection: ansible.netcommon.network_cli
+
+  tasks:
+    - name: "MOTD Banner"
+      cisco.ios.ios_banner:
+        banner: motd
+        text: |
+          This is banner for usa
+          device in the network
+        state: present
+
+      register: output
+
+    - debug: print output
+        var: output.stdout_lines
