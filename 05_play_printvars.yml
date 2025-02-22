@@ -1,6 +1,6 @@
 ---
 
-- name: "print some var info"
+- name: "print var info"
   hosts: all
   gather_facts: false
 
