@@ -5,7 +5,7 @@
   gather_facts: false
 
   tasks:
-    - name: "access var staff"
+    - name: "access var info"
       debug:
         msg: "{{ hostvars[ansible_host] }}"
 
