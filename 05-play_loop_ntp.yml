@@ -3,7 +3,7 @@
 - name: "ntp configure by loop"
   hosts: usa
   gather_facts: false
-  connection: network_cli
+  connection: ansible.netcommon.network_cli
 
   tasks:
     - name: "loop through NTP servers"
